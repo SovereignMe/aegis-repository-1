@@ -2,11 +2,9 @@ apiVersion: skaffold/v4beta7
 kind: Config
 metadata:
   name: aegis
+
 manifests:
   rawYaml:
-  rawYaml:
-  
-    - computeclass-web-flex.yaml
     - k8s/namespace.yaml
     - k8s/backend-deployment.yaml
     - k8s/backend-service.yaml
