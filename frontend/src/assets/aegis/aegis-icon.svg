@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+<defs>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#C8A75B"/>
+    <stop offset="100%" stop-color="#E7CB83"/>
+  </linearGradient>
+  <linearGradient id="navy" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#12233F"/>
+    <stop offset="100%" stop-color="#0B1220"/>
+  </linearGradient>
+</defs>
+<path d="M256 28 430 98v146c0 111-70 196-174 240C152 440 82 355 82 244V98L256 28Z" fill="url(#navy)" stroke="url(#gold)" stroke-width="18" stroke-linejoin="round"/>
+<path d="M256 58 401 116v123c0 87-54 154-145 194-91-40-145-107-145-194V116L256 58Z" fill="#0C1730" stroke="#D7BE79" stroke-opacity=".35" stroke-width="8" stroke-linejoin="round"/>
+<path d="M184 393 256 133l72 260h-54l-18-63h-1l-17 63h-54Z" fill="url(#gold)"/>
+<path d="M224 265h64l-31-112-33 112Z" fill="#0B1220"/>
+<path d="M214 435l42-27 42 27-42 34-42-34Z" fill="url(#gold)"/>
+</svg>

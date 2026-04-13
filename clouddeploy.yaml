@@ -1,0 +1,36 @@
+apiVersion: deploy.cloud.google.com/v1
+egis-cluster
+kind: DeliveryPipeline
+egis-cluster
+metadata:
+egis-cluster
+  name: aegis-pipeline
+egis-cluster
+description: AEGIS CI/CD pipeline
+egis-cluster
+serialPipeline:
+egis-cluster
+  stages:
+egis-cluster
+    - targetId: prod
+egis-cluster
+      profiles:
+egis-cluster
+        - prod
+egis-cluster
+---
+egis-cluster
+apiVersion: deploy.cloud.google.com/v1
+egis-cluster
+kind: Target
+egis-cluster
+metadata:
+egis-cluster
+  name: prod
+egis-cluster
+description: Production GKE target
+egis-cluster
+gke:
+egis-cluster
+  cluster: projects/aegis-gov-prod/locations/us-central1/clusters/aegis-cluster
+egis-cluster

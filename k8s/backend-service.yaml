@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: aegis-backend
+  namespace: aegis
+  annotations:
+    cloud.google.com/backend-config: '{"ports":{"http":"aegis-backendconfig"}}'
+    cloud.google.com/neg: '{"ingress": true}'
+spec:
+  selector:
+    app: aegis-backend
+  ports:
+    - name: http
+      port: 3001
+      targetPort: 3001
+      protocol: TCP
+  type: ClusterIP

@@ -1,0 +1,20 @@
+apiVersion: skaffold/v4beta7
+kind: Config
+metadata:
+  name: aegis
+manifests:
+  rawYaml:
+    - k8s/namespace.yaml
+    - k8s/backend-deployment.yaml
+    - k8s/backend-service.yaml
+    - k8s/frontend-deployment.yaml
+    - k8s/frontend-service.yaml
+    - k8s/managed-cert.yaml
+    - k8s/backend-config.yaml
+    - k8s/ingress.yaml
+
+deploy:
+  kubectl: {}
+
+profiles:
+  - name: prod

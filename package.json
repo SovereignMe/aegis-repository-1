@@ -1,0 +1,27 @@
+{
+  "name": "trust-governance-app",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "shared",
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "verify:packages": "node ./scripts/verify-workspace-package-jsons.mjs",
+    "verify:workspace": "npm run verify:packages && npm ls --workspaces --all",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "ci": "npm run verify:workspace && npm run verify:production-ready && npm run typecheck && npm run lint && npm run test && npm run build",
+    "release:stage": "node ./scripts/stage-release.mjs",
+    "release:verify": "node ./scripts/verify-release.mjs",
+    "release": "npm run ci && npm run release:stage && npm run release:verify",
+    "test:e2e": "npm run test:e2e --workspace frontend",
+    "test:load:auth": "npm run test:load:auth --workspace backend",
+    "test:load:upload": "npm run test:load:upload --workspace backend",
+    "test:restore-drill": "npm run test:restore-drill --workspace backend",
+    "verify:production-ready": "node ./scripts/verify-production-readiness.mjs"
+  }
+}

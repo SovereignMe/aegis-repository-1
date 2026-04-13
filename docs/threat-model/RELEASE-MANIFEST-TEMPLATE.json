@@ -1,0 +1,16 @@
+{
+  "product": "AEGIS Governance",
+  "releaseType": "source-only",
+  "generatedAt": "<ISO-8601>",
+  "commit": "<git-sha>",
+  "lockfiles": ["package-lock.json", "backend/package-lock.json", "frontend/package-lock.json", "shared/package-lock.json"],
+  "verifications": {
+    "typecheck": true,
+    "releaseVerify": true,
+    "forbiddenFilesCheck": true
+  },
+  "signing": {
+    "artifactSignature": "<detached-signature-or-reference>",
+    "keyId": "<managed-key-id>"
+  }
+}

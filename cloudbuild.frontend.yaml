@@ -1,0 +1,11 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -f
+      - ./frontend/Dockerfile.frontend
+      - -t
+      - us-central1-docker.pkg.dev/aegis-gov-prod/aegis-repo/frontend:auth-fixed-v2
+      - .
+images:
+  - us-central1-docker.pkg.dev/aegis-gov-prod/aegis-repo/frontend:auth-fixed-v2

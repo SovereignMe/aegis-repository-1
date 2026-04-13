@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS integrations;
+DROP TABLE IF EXISTS audit_events;
+DROP TABLE IF EXISTS timers;
+DROP TABLE IF EXISTS tasks;
+DROP TABLE IF EXISTS deadline_rules;
+DROP TABLE IF EXISTS exhibit_index;
+DROP TABLE IF EXISTS document_versions;
+DROP TABLE IF EXISTS documents;
+DROP TABLE IF EXISTS trust_ledgers;
+DROP TABLE IF EXISTS contacts;
+DROP TABLE IF EXISTS refresh_sessions;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS permissions;
+DROP TABLE IF EXISTS app_settings;

@@ -1,0 +1,20 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="40" y1="24" x2="216" y2="232" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#1D4ED8"/>
+    <stop offset="1" stop-color="#0B1220"/>
+  </linearGradient>
+  <linearGradient id="edge" x1="64" y1="40" x2="192" y2="216" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#F8FAFC"/>
+    <stop offset="1" stop-color="#94A3B8"/>
+  </linearGradient>
+  <linearGradient id="gold" x1="96" y1="92" x2="164" y2="180" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#E8D08C"/>
+    <stop offset="1" stop-color="#C8A75B"/>
+  </linearGradient>
+</defs>
+<path d="M128 20L212 56V122C212 176 179.2 224.8 128 240C76.8 224.8 44 176 44 122V56L128 20Z" fill="url(#bg)" stroke="url(#edge)" stroke-width="10"/>
+<path d="M128 46L189 72V121C189 161 165.8 198.8 128 211C90.2 198.8 67 161 67 121V72L128 46Z" fill="#0F172A" fill-opacity="0.76" stroke="#1E3A5F" stroke-width="4"/>
+<path d="M128 74L168 180H147L137.5 154H99.5L90 180H69L109 74H128ZM132 139L118.5 101L105 139H132Z" fill="url(#edge)"/>
+<rect x="145" y="82" width="34" height="12" rx="3" fill="url(#gold)"/>
+</svg>

@@ -1,0 +1,36 @@
+{
+  "name": "aegis-governance-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx} test/**/*.js vite.config.js",
+    "test": "tsx --test test/**/*.test.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test:e2e": "npx playwright@1.53.0 test -c e2e/playwright.config.ts",
+    "test:permissions": "tsx --test test/permission-ui-regression.test.js test/permissions.test.js",
+    "test:a11y": "tsx --test test/a11y-regression.test.js",
+    "ci": "npm run typecheck && npm run test && npm run test:permissions && npm run test:a11y && npm run build && npm run test:e2e:verification",
+    "test:e2e:verification": "npx playwright@1.53.0 test -c e2e/playwright.config.ts e2e/tests/verification-ux.spec.ts"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@trust-governance/shared": "file:../shared",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.8",
+    "eslint": "^9.24.0",
+    "@eslint/js": "^9.24.0",
+    "globals": "^15.15.0",
+    "eslint-plugin-react": "^7.37.4"
+  }
+}
