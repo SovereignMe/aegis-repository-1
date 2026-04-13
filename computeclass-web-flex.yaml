@@ -1,0 +1,12 @@
+apiVersion: cloud.google.com/v1
+kind: ComputeClass
+metadata:
+  name: web-flex
+spec:
+  priorities:
+    - machineFamily: n4
+    - machineFamily: n2
+    - machineFamily: e2
+  activeMigration:
+    optimizeRulePriority: true
+  whenUnsatisfiable: ScaleUpAnyway

@@ -13,6 +13,8 @@ spec:
       labels:
         app: aegis-backend
     spec:
+      nodeSelector:
+        cloud.google.com/compute-class: web-flex
       containers:
         - name: backend
           image: backend
