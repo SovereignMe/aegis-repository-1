@@ -84,6 +84,10 @@ export async function buildApp() {
     },
   }));
 
+  app.get("/api/health", async () => {
+    return { status: "ok" };
+  });
+
   app.get("/metrics", { preHandler: requireMetricsAccess() }, async () =>
     getMetrics()
   );
@@ -118,7 +122,12 @@ export async function buildApp() {
     async () => runBackupRestoreDrill()
   );
 
-  await registerRoutes(app);
+  await app.register(
+    async function (api) {
+      await registerRoutes(api);
+    },
+    { prefix: "/api" }
+  );
 
   return app;
 }
