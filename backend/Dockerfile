@@ -1,26 +1,36 @@
 FROM node:22-alpine AS deps
-WORKDIR /workspace/backend
-COPY backend/package*.json ./
+WORKDIR /workspace
+
+COPY package*.json ./
+COPY backend/package.json ./backend/package.json
+COPY frontend/package.json ./frontend/package.json
+COPY shared/package.json ./shared/package.json
 RUN npm ci
 
 FROM node:22-alpine AS build
 WORKDIR /workspace
-COPY --from=deps /workspace/backend/node_modules ./backend/node_modules
+
+COPY --from=deps /workspace/node_modules ./node_modules
+COPY package*.json ./
+COPY tsconfig.base.json ./
 COPY backend ./backend
 COPY shared ./shared
-COPY tsconfig.base.json ./
 RUN cd backend && npm run build
 
 FROM node:22-alpine AS runtime
 WORKDIR /app
+
 ENV NODE_ENV=production
 ENV PORT=3001
 
-COPY backend/package*.json ./
+COPY package*.json ./
+COPY backend/package.json ./backend/package.json
+COPY frontend/package.json ./frontend/package.json
+COPY shared/package.json ./shared/package.json
 RUN npm ci --omit=dev
 
-COPY --from=build /workspace/backend/dist ./dist
+COPY --from=build /workspace/backend/dist ./backend/dist
 
 EXPOSE 3001
 
-CMD ["npm", "start"]
+CMD ["node", "backend/dist/backend/src/server.js"]
